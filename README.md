@@ -50,11 +50,26 @@ Acesse este repositório que contem as descrições de instalação do Tasmota e
 
 A estrutura de tópicos de um dispositivo Tasmota no MQTT segue uma hierarquia bem definida, permitindo comunicação bidirecional entre o dispositivo e o servidor MQTT. Essa estrutura é flexível e configurável, mas geralmente utiliza os prefixos `cmnd`, `stat` e `tele` combinados com o tópico base do dispositivo.
 
+## Configuração de Tópicos MQTT no Tasmota
+
+1. Acesse o dispositivo Tasmota via navegador.
+2. Vá para **Configuration > Configure MQTT**.
+3. Configure os campos:
+   - **Full Topic**:  
+     Geralmente, o padrão é `%prefix%/%topic%/`, o que gera a estrutura descrita.
+   - **Topic**:  
+     Nome único para identificar o dispositivo (ex.: `tasmota_lampada01`).
+
+Com essa estrutura, o dispositivo Tasmota pode ser facilmente integrado a sistemas como **Home Assistant**, **Node-RED**, ou qualquer servidor MQTT.
+
+
 ## 1. Prefixos Padrão
 
-- **`cmnd/`**: (Command) Usado para enviar comandos ao dispositivo.
-- **`stat/`**: (Status) Usado para receber o estado do dispositivo.
-- **`tele/`**: (Telemetry) Usado para dados de telemetria enviados pelo dispositivo, como sensores ou status periódico.
+| **Prefixo** | **Função**                    | **Exemplo de Tópico**           | **Descrição**                                                            |
+|-------------|-------------------------------|----------------------------------|--------------------------------------------------------------------------|
+| `cmnd`      | Comandos enviados ao dispositivo | `cmnd/tasmota_lampada01/POWER`  | Enviar comandos para ligar/desligar, alterar brilho, etc.                |
+| `stat`      | Estado do dispositivo         | `stat/tasmota_lampada01/POWER`  | Retorna o estado atual do relé ou resposta a um comando.                 |
+| `tele`      | Dados periódicos/telemetria   | `tele/tasmota_lampada01/SENSOR` | Envia dados de sensores ou status periódico (temperatura, umidade, etc.) |
 
 ---
 
@@ -159,29 +174,5 @@ Usados para informações periódicas:
   - `"Offline"`: Dispositivo desconectado.
 
 ---
-
-## Resumo da Estrutura
-
-| **Prefixo** | **Função**                    | **Exemplo de Tópico**           | **Descrição**                                                            |
-|-------------|-------------------------------|----------------------------------|--------------------------------------------------------------------------|
-| `cmnd`      | Comandos enviados ao dispositivo | `cmnd/tasmota_lampada01/POWER`  | Enviar comandos para ligar/desligar, alterar brilho, etc.                |
-| `stat`      | Estado do dispositivo         | `stat/tasmota_lampada01/POWER`  | Retorna o estado atual do relé ou resposta a um comando.                 |
-| `tele`      | Dados periódicos/telemetria   | `tele/tasmota_lampada01/SENSOR` | Envia dados de sensores ou status periódico (temperatura, umidade, etc.) |
-
----
-
-## Configuração de Tópicos MQTT no Tasmota
-
-1. Acesse o dispositivo Tasmota via navegador.
-2. Vá para **Configuration > Configure MQTT**.
-3. Configure os campos:
-   - **Full Topic**:  
-     Geralmente, o padrão é `%prefix%/%topic%/`, o que gera a estrutura descrita.
-   - **Topic**:  
-     Nome único para identificar o dispositivo (ex.: `tasmota_lampada01`).
-
----
-
-Com essa estrutura, o dispositivo Tasmota pode ser facilmente integrado a sistemas como **Home Assistant**, **Node-RED**, ou qualquer servidor MQTT.
 
 
