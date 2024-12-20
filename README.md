@@ -42,4 +42,5 @@ Tasmota é um firmware de código aberto projetado para dispositivos baseados no
 
 Acesse este repositório que contem as descrições de instalação do Tasmota e o uso com a plataforma Home Assistant
 
-[https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT](Instalação e uso com Home Assistant)
+# [Instalação e uso com Home Assistant](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT)
+
