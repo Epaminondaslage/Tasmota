@@ -81,6 +81,8 @@ Passo a passo de instalação
 
 <img src="./img/fig2.png" alt="Ilustração 2" width="300px">
 
+<img src="./img/fig3.png" alt="Ilustração 2" width="300px">
+
 Configurar o Wi-Fi no Tasmota (Após usar o Tasmotize. Com o **webinstaller** ele solicita ssid e senha)
 
     - Após o flash, o ESP32 inicia como um ponto de acesso Wi-Fi com SSID tasmota-XXXX.
