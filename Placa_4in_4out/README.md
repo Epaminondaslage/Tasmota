@@ -55,11 +55,7 @@ A **Placa ESP32 - AUTOMAÇÃO - 4 CANAIS** é uma solução prática e eficiente
 
 ---
 
-#### **Destaques**
-A **Placa ESP32 - AUTOMAÇÃO - 4 CANAIS** combina praticidade, robustez e conectividade, sendo uma excelente escolha para quem busca soluções modernas e confiáveis em automação.
-
-
-#### *** Instalação e congiguração do firmware TASMOTA
+#### *** Instalação e configuração do firmware TASMOTA
 
 	Software necessário:
         Tasmota Firmware.
