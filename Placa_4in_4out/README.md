@@ -1,7 +1,12 @@
-
 ### Placa ESP32 - AUTOMAÇÃO - 4 CANAIS
 
+![Placa ESP32 - Frente](./img/placa_ESP32.jpg){:height="300px"}
+
 A **Placa ESP32 - AUTOMAÇÃO - 4 CANAIS** é uma solução prática e eficiente para aplicações de automação residencial ou industrial. Com o módulo ESP32 integrado e suporte a múltiplas entradas e saídas, esta placa é ideal para diversos cenários que demandam conectividade e controle inteligente.
+
+---
+
+![Placa ESP32 - 4 Canais](./img/placa_ESP32_4IO.jpg){:height="300px"}
 
 ---
 
@@ -19,6 +24,12 @@ A **Placa ESP32 - AUTOMAÇÃO - 4 CANAIS** é uma solução prática e eficiente
   - Possibilidade de enviar a alimentação de entrada para o comum dos relés via jumpers.
 - **Compatibilidade com Alexa:** 
   - Configuração simples via **firmware Tasmota**, permitindo controle por voz e integração com dispositivos IoT.
+
+---
+
+![Ilustração 1](./img/fig1.png){:height="300px"}
+
+![Ilustração 2](./img/fig2.png){:height="300px"}
 
 ---
 
