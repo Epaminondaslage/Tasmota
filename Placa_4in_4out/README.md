@@ -22,12 +22,6 @@ A **Placa ESP32 - AUTOMAÇÃO - 4 CANAIS** é uma solução prática e eficiente
 
 ---
 
-<img src="fig1.png" alt="Ilustração 1" width="300px">
-
-<img src="fig2.png" alt="Ilustração 2" width="300px">
-
----
-
 #### **Especificações Técnicas**
 - **Relés:**
   - 4 saídas com capacidade de até 10A.
@@ -42,14 +36,13 @@ A **Placa ESP32 - AUTOMAÇÃO - 4 CANAIS** é uma solução prática e eficiente
 - **Dimensões e Proteção:**
   - Caixa plástica de proteção: **95x90x40mm**.
   - Suporte para montagem com parafusos ou trilho DIN.
-  - 
-<img src="./img/placa_ESP32.jpg" alt="Placa ESP32 - Frente" width="300px">
+    
+<img src="./img/placa_ESP32.jpg" alt="Placa ESP32 - Frente" width="600px">
 ---
 
 #### **Itens Inclusos**
 - Placa **ESP32 - AUTOMAÇÃO - 4 CANAIS** pronta para uso.
 - **Módulo ESP32-DevKit** com 30 pinos.
-- Caixa plástica de proteção com suporte e parafusos para fixação.
 
 ---
 
@@ -64,3 +57,39 @@ A **Placa ESP32 - AUTOMAÇÃO - 4 CANAIS** é uma solução prática e eficiente
 
 #### **Destaques**
 A **Placa ESP32 - AUTOMAÇÃO - 4 CANAIS** combina praticidade, robustez e conectividade, sendo uma excelente escolha para quem busca soluções modernas e confiáveis em automação.
+
+
+#### *** Instalação e congiguração do firmware TASMOTA
+
+	Software necessário:
+        Tasmota Firmware.
+        Tasmota Web Installer (recomendado para iniciantes).
+        Alternativamente, utilize o esptool.py (para métodos avançados).
+        Drivers USB para sua placa ESP32 (se necessário).
+
+Passo a passo de instalação
+
+1. Configurar o ESP32 no modo de Flash
+2. Conecte o ESP32 ao computador utilizando o cabo USB.
+3. Pressione e mantenha pressionado o botão de BOOT enquanto reinicia o dispositivo ou conecta-o ao computador. Isso coloca o ESP32 no modo de flash.
+4. Utilizar o Tasmota Web Installer com o navegador **Chrome**
+5. Acesse Tasmota Web Installer [https://tasmota.github.io/install/](https://tasmota.github.io/install/) 
+6. Selecione ESP32 na lista de dispositivos.
+7. Clique em Connect e escolha a porta serial correspondente ao ESP32.
+8. Siga as instruções para:
+	   - Detectar a placa.
+      - Fazer o upload do firmware Tasmota.
+      - Após o flash, o ESP32 reiniciará automaticamente.
+
+<img src="./img/fig1.png" alt="Ilustração 1" width="300px">
+
+<img src="./img/fig2.png" alt="Ilustração 2" width="300px">
+
+Configurar o Wi-Fi no Tasmota (Após usar o Tasmotize. Com o **webinstaller** ele solicita ssid e senha)
+
+    - Após o flash, o ESP32 inicia como um ponto de acesso Wi-Fi com SSID tasmota-XXXX.
+    - Conecte-se a este ponto de acesso com uma senha padrão (tasmota).
+    - Acesse o endereço IP padrão: 192.168.4.1 no navegador.
+    - Insira as credenciais de sua rede Wi-Fi local.
+---
+
