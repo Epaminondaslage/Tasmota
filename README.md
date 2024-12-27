@@ -65,7 +65,7 @@ O Tasmota oferece 4 ferramentas para a instalação. Usaremos o **Tasmota Web In
 
 Com o Instalador Web do Tasmota, você pode fazer o flash do Tasmota diretamente do seu navegador da web. Você só precisa conectar o dispositivo ESP ao seu computador usando USB ou um adaptador serial para USB (certifique-se que o cabo utilizado suporta transporte de dados!), selecionar a variante de firmware adequada para o seu dispositivo e clicar no botão **CONNECT**. Ele solicitará a porta correta onde o dispositivo está localizado e iniciará o processo de instalação.
 
-![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens)/00.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/00.png)
 
 Clique em install Tasmota.
 
