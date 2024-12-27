@@ -1,5 +1,6 @@
-## Instalação e uso com o Home Assistant
+KC868-A16
 
-Acesse este repositório que contem as descrições de instalação do Tasmota e o uso com a plataforma Home Assistant
+Here is "KCS" firmware for KinCony KC868-A series (ESP32) board.
+How to download and use, online guide: 
 
-[Instalação e uso com Home Assistant](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT)
+https://www.kincony.com/esp32-kcsv2-firmware.html
