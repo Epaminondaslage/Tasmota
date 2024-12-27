@@ -63,7 +63,9 @@ A **Placa ESP32 - AUTOMAÇÃO - 4 CANAIS** é uma solução prática e eficiente
         Alternativamente, utilize o esptool.py (para métodos avançados).
         Drivers USB para sua placa ESP32 (se necessário).
 
-Passo a passo de instalação
+---
+
+#### **Passo a passo de instalação** 
 
 1. Configurar o ESP32 no modo de Flash
 2. Conecte o ESP32 ao computador utilizando o cabo USB.
@@ -83,11 +85,9 @@ Passo a passo de instalação
 
 <img src="./img/fig3.png" alt="Ilustração 2" width="300px">
 
-Configurar o Wi-Fi no Tasmota (Após usar o Tasmotize. Com o **webinstaller** ele solicita ssid e senha)
+---
 
-    - Após o flash, o ESP32 inicia como um ponto de acesso Wi-Fi com SSID tasmota-XXXX.
-    - Conecte-se a este ponto de acesso com uma senha padrão (tasmota).
-    - Acesse o endereço IP padrão: 192.168.4.1 no navegador.
-    - Insira as credenciais de sua rede Wi-Fi local.
+Configurar o Wi-Fi no Tasmota. Com o **webinstaller** após a instalação ele solicita **ssid e senha**)
+
 ---
 
