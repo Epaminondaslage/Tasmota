@@ -37,7 +37,20 @@ Tasmota é um firmware de código aberto projetado para dispositivos baseados no
 - Automatizar cortinas, portas ou janelas.
 - Monitorar sensores de temperatura, umidade ou movimento.
 - Gerenciar dispositivos elétricos, como ventiladores ou aquecedores.
+- 
 
+Este menu contém links para diferentes repositórios e projetos hospedados no GitHub.
+
+## Repositórios
+
+1. **Home Assistant, Tasmota e MQTT**
+   - Repositório: [HomeAssistant-Tasmota-MQTT](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT)
+
+2. **Placa 4in/4out com Tasmota**
+   - Repositório: [Tasmota - Placa 4in/4out](https://github.com/Epaminondaslage/Tasmota/tree/main/Placa_4in_4out)
+
+3. **Placa KC868-A16 com Tasmota**
+   - Repositório: [Tasmota - KC868-A16](https://github.com/Epaminondaslage/Tasmota/tree/main/KC868-A16)
 
 
 
