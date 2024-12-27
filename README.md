@@ -69,35 +69,35 @@ Com o Instalador Web do Tasmota, você pode fazer o flash do Tasmota diretamente
 
 Clique em install Tasmota.
 
-![Alt text](./imagens/01.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/01.png)
 
 Clique em NEXT.
 
-![Alt text](./imagens/02.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/02.png)
 
 Prossiga com a instalação.
 
-![Alt text](./imagens/03.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/03.png)
 
-![Alt text](./imagens/04.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/04.png)
 
-![Alt text](./imagens/05.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/05.png)
 
 Configure o ponto de acesso WIFI.
 
-![Alt text](./imagens/06.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/06.png)
 
-![Alt text](./imagens/07.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/07.png)
 
 Clique em Visit Device para abrir uma nova guia com a interface Web do ESP configurado.
 
-![Alt text](./imagens/08.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/08.png)
 
 # Interface Web
 
 A interface de usuário web do Tasmota é uma maneira prática de controlar e gerenciar o seu dispositivo com Tasmota. Para acessá-la, use o endereço IP do seu dispositivo no seu navegador web favorito. Por padrão, a interface começa no modo administrador não protegido, que permite acesso completo ao seu dispositivo para qualquer pessoa com acesso a esse IP.
 
-![Alt text](./imagens/09.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/09.png)
 
 A interface possui 4 opções de menu:
 
@@ -108,54 +108,54 @@ A interface possui 4 opções de menu:
 
 ## Configuração
 
-![Alt text](./imagens/10.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/10.png)
 
 ### Configure Module
 
 Esta janela serve para alterar a configuração do dispositivo ESP, customizando=a como desejado; Para proporcionar o acionamento de um relé, configuramos o GPIO associado para funcionar como relé, como mostrado abaixo.
 
-![Alt text](./imagens/11.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/11.png)
 
 O ESP32 possui um sensor de efeito Hall embutido que detecta mudanças no campo magnético ao seu redor. Ele está localizado atrás da tampa de metal do módulo e conectado aos pinos GPIO36 e GPIO39. Para habilita-lo, faça a seguinte alteração na configuração do módulo:
 
 - GPIO36 como HallEffect 1
 - GPIO39 como HallEffect 2
 
-![Alt text](./imagens/12.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/12.png)
 
 Este relé e sensor serão utilizados para demonstração no restante do tutorial. Clique em salvar e espere o dispositivo reiniciar.
 
-![Alt text](./imagens/13.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/13.png)
 
 Uma vez reiniciado, podemos ver as alterações feitas na tela inicial, que agora mostra o valor do sensor de efeito hall e um botão para acionamento do relé.
 
-![Alt text](./imagens/14.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/14.png)
 
-![Alt text](./imagens/15.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/15.png)
 
 ### Configure MQTT
 
 Conecte o Tasmota ao broker MQTT de sua escolha. Aqui, foi utilizado o Mosquitto, rodando como add-on no Home Assistant.
 
-![Alt text](./imagens/16.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/16.png)
 
 Assim que conectado, são criados topicos associados ao dispositivo. Na imagem abaixo, o software [MQTT Explorer](http://mqtt-explorer.com/) foi utilizado para visualização dos topicos e valores no broker MQTT.
 
-![Alt text](./imagens/17.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/17.png)
 
 ## Consoles
 
-![Alt text](./imagens/18.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/18.png)
 
 ### Console
 
 Abaixo podemos ver o console do Tasmota. Quando enviamos o comando **power off**, o relé é desativado e o estado atualizado no respectivo topico MQTT.
 
-![Alt text](./imagens/19.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/19.png)
 
 Similarmente, se publicamos **on** no topico **cmnd/tasmota_01/POWER**, o relé é acionado.
 
-![Alt text](./imagens/20.png)
+![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/20.png)
 
   
 
