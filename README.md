@@ -4,6 +4,20 @@ O Tasmota é um firmware de código aberto para dispositivos baseados nos chipse
 
 Este tutorial busca ensinar de forma simples e direta comoe instalar e configurar o Tasmota, assim como mostrar os passos para a integração com o Home Assistant, permitindo que você use livremente seus dispositivos ESP para personalizar suas automações residenciais. Utilizaremos um ESP32 neste tutorial, mas as etapas fornecidas também devem funcionar para configurar o Tasmota em dispositivos ESP82XX.
 
+Este menu contém links para diferentes repositórios do mesmo tema e hospedados no GitHub.
+
+## Repositórios
+
+1. **Home Assistant, Tasmota e MQTT**
+   - Repositório: [HomeAssistant-Tasmota-MQTT](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT)
+
+2. **Placa 4in/4out com Tasmota**
+   - Repositório: [Tasmota - Placa 4in/4out](https://github.com/Epaminondaslage/Tasmota/tree/main/Placa_4in_4out)
+
+3. **Placa KC868-A16 com Tasmota**
+   - Repositório: [Tasmota - KC868-A16](https://github.com/Epaminondaslage/Tasmota/tree/main/KC868-A16)
+
+
 ## Principais características do Tasmota
 1. **Compatibilidade ampla**:
    - Funciona com diversos dispositivos inteligentes, como lâmpadas, interruptores, sensores e tomadas, desde que utilizem ESP8266 ou ESP32.
@@ -159,18 +173,6 @@ Similarmente, se publicamos **on** no topico **cmnd/tasmota_01/POWER**, o relé 
 
   
 
-Este menu contém links para diferentes repositórios e projetos hospedados no GitHub.
-
-## Repositórios
-
-1. **Home Assistant, Tasmota e MQTT**
-   - Repositório: [HomeAssistant-Tasmota-MQTT](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT)
-
-2. **Placa 4in/4out com Tasmota**
-   - Repositório: [Tasmota - Placa 4in/4out](https://github.com/Epaminondaslage/Tasmota/tree/main/Placa_4in_4out)
-
-3. **Placa KC868-A16 com Tasmota**
-   - Repositório: [Tasmota - KC868-A16](https://github.com/Epaminondaslage/Tasmota/tree/main/KC868-A16)
 
 
 
