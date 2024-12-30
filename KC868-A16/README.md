@@ -1,7 +1,7 @@
 
-<img src="../img/KC868-A16.jpg" alt="Placa KC868-A16" style="width: 30%;">
-<img src="../img/a16-connections.jpg" alt="Placa KC868-A16" style="width: 30%;">
-<img src="../img/a16-connections3.jpg" alt="Placa KC868-A16" style="width: 30%;">
+<img src="../img/KC868-A16.jpg" alt="Placa KC868-A16" style="width: 50%;">
+<img src="../img/a16-connections.jpg" alt="Placa KC868-A16" style="width: 50%;">
+<img src="../img/a16-connections3.jpg" alt="Placa KC868-A16" style="width: 50%;">
 ### KinCony 16 Channel Relay Board (KC868-A16) TASMOTA Template
 
 https://templates.blakadder.com/kincony_KC868-A16.html
