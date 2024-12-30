@@ -4,7 +4,9 @@ O Tasmota é um firmware de código aberto para dispositivos baseados nos chipse
 
 Este tutorial busca ensinar de forma simples e direta comoe instalar e configurar o Tasmota, assim como mostrar os passos para a integração com o Home Assistant, permitindo que você use livremente seus dispositivos ESP para personalizar suas automações residenciais. Utilizaremos um ESP32 neste tutorial, mas as etapas fornecidas também devem funcionar para configurar o Tasmota em dispositivos ESP82XX.
 
-Este menu contém links para diferentes repositórios do mesmo tema e hospedados no GitHub.
+---
+
+* Links para diferentes repositórios do mesmo tema e hospedados no GitHub.
 
 ## Repositórios
 
@@ -16,9 +18,14 @@ Este menu contém links para diferentes repositórios do mesmo tema e hospedados
 
 3. **Placa KC868-A16 com Tasmota**
    - Repositório: [Tasmota - KC868-A16](https://github.com/Epaminondaslage/Tasmota/tree/main/KC868-A16)
+     
+4. **TASMOTA para Ai-Thinker Camera (ESP32-CAM)**
+   - Repositório: [Tasmota - ESP 32 CAM ](https://github.com/Epaminondaslage/ESP-32-CAM)
 
+---
 
 ## Principais características do Tasmota
+
 1. **Compatibilidade ampla**:
    - Funciona com diversos dispositivos inteligentes, como lâmpadas, interruptores, sensores e tomadas, desde que utilizem ESP8266 ou ESP32.
 
