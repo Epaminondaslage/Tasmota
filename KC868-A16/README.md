@@ -1,3 +1,7 @@
+# KC868-A16
+
+
+https://www.kincony.com/images/user-guide/KCS_V2/KCS_user_guide_v2.0.pdf
 
 <img src="../img/KC868-A16.jpg" alt="Placa KC868-A16" style="width: 50%;">
 <img src="../img/a16-connections.jpg" alt="Placa KC868-A16" style="width: 50%;">
