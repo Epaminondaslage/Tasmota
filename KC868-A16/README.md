@@ -1,6 +1,6 @@
 # Tasmota firmware with KC868-A16
 
-### Instalador do Tasmota web
+### Usar o Instalador Tasmotaweb
 
 É necessario usar o Google Chrome
 Acesse a URL : 
