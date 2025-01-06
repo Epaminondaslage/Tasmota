@@ -3,7 +3,8 @@
 ### Usar o Instalador Tasmotaweb
 
 É necessario usar o Google Chrome
-Acesse a URL : 
+
+Acessar a URL : 
 
 https://tasmota.github.io/install/
 
