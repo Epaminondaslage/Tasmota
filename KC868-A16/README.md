@@ -58,7 +58,7 @@ https://templates.blakadder.com/kincony_KC868-A16.html
 
 https://www.kincony.com/forum/attachment.php?aid=2872
 
-### KC868-A6 com sensor de temperatura
+### KC868-A16 com sensor de temperatura
 
 https://www.kincony.com/forum/showthread.php?tid=2370&page=2&highlight=KC868-A16+firmware
 
