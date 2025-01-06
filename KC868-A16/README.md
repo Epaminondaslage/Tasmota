@@ -1,5 +1,21 @@
 # Tasmota firmware with KC868-A16
 
+### Instalador do Tasmota web
+
+É necessario usar o Google Chrome
+Acesse a URL : 
+
+https://tasmota.github.io/install/
+
+<img src="../img/tasmota_web_instaler.jpg" alt="IIC KC868-A16" style="width: 50%;">
+
+
+### Baixar o Firmware Tasmota de drag and dop in webpage
+
+https://drive.google.com/file/d/1PdXAKDZJ2mif8EGle3fGMhevDy6k03sR/view?usp=drive_link
+
+### Config Ethernet for KC868-A16
+
 if you want to enable **Ethernet for KC868-A16**, just click **"Configure Other"** -- paste **"Template"** as follows:
 
 ``` 
