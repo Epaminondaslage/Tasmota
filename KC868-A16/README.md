@@ -1,7 +1,14 @@
-# KC868-A16
+# Tasmota firmware with KC868-A16
+
+if you want to enable **Ethernet for KC868-A16**, just click **"Configure Other"** -- paste **"Template"** as follows:
+
+``` 
+{"NAME":"KC868-A16","GPIO":[32,0,1120,0,640,608,0,0,0,1,1,1152,0,0,5600,0,0,0,0,5568,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,1],"FLAG":0,"BASE":1,"CMND":"EthClockMode 3 | EthAddress 0 | EthType 0 | I2CDriver2 1"}
+```
+
+check **"Activate"**  , then press **"Save"**. after restart, ethernet cable can be used.
 
 
-https://www.kincony.com/images/user-guide/KCS_V2/KCS_user_guide_v2.0.pdf
 
 <img src="../img/KC868-A16.jpg" alt="Placa KC868-A16" style="width: 50%;">
 <img src="../img/a16-connections.jpg" alt="Placa KC868-A16" style="width: 50%;">
