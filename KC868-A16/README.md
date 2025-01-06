@@ -10,7 +10,7 @@ https://tasmota.github.io/install/
 <img src="../img/tasmota_web_instaler.jpg" alt="IIC KC868-A16" style="width: 50%;">
 
 
-### Baixar o Firmware Tasmota de drag and dop in webpage
+### Baixar o Firmware Tasmota de drag and drop in webpage
 
 https://drive.google.com/file/d/1PdXAKDZJ2mif8EGle3fGMhevDy6k03sR/view?usp=drive_link
 
