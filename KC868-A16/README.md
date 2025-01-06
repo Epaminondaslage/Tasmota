@@ -30,8 +30,8 @@ check **"Activate"**  , then press **"Save"**. after restart, ethernet cable can
 you need to set "SDA" and "SCL" pin firstly. the follow is KC868-A16, you just set 
 
 ```
-SDA:GPIO4  
-SCL: GPIO5 
+I2C SDA:GPIO4  
+I2C SCL: GPI15 
 ```
 
 for KC868-A16, then config PCF8574 for "INPUT" and "OUTPUT", will be ok.
