@@ -5,12 +5,16 @@
 * Referencias não testadas no site Tasmota https://templates.blakadder.com/kincony_KC868-A16.html
 
 
-template32:
+### Config do template para ESP32:
 
+```
+{"NAME":"KC868-A16 rev 1.4","GPIO":[32,1,1,1,640,608,1,1,1,1,1,1,1,1,5600,1,0,1,1,5568,0,1,1,1,0,0,0,0,1,1,1,1,1,0,0,1],"FLAG":0,"BASE":1}
+
+```
 ---
 Use the _USB-C_ port to flash the device.
 
-To build a binary with ethernet, all inputs and outputs support add to `user_config_override.h`:
+### To build a binary with ethernet, all inputs and outputs support add to `user_config_override.h`:
 
 ```arduino
 #ifndef USE_I2C
@@ -28,7 +32,12 @@ To build a binary with ethernet, all inputs and outputs support add to `user_con
   #define ETH_CLKMODE       3                    // [EthClockMode] 0 = ETH_CLOCK_GPIO0_IN, 1 = ETH_CLOCK_GPIO0_OUT, 2 = ETH_CLOCK_GPIO16_OUT, 3 = ETH_CLOCK_GPIO17_OUT
 ```
 
-Inputs (X01 - X16) and outputs (Y01 - Y16) use [PCF8574](https://tasmota.github.io/docs/PCF8574/) over I2C. You need to configure them using _**Configuration - Configure PCF8574**_ and set
+Inputs (X01 - X16) and outputs (Y01 - Y16) use [PCF8574](https://tasmota.github.io/docs/PCF8574/) over I2C. 
+
+You need to configure them using _
+
+**Configuration - Configure PCF8574**_ and set
+
 - Device 1  Port 0 - Port 7 as Output
 - Device 2  Port 0 - Port 7 as Output
 - Device 3  Port 0 - Port 7 as Input
