@@ -4,18 +4,9 @@
 
 * Referencias não testadas no site Tasmota https://templates.blakadder.com/kincony_KC868-A16.html
 
-date_added: 2022-05-20
-title: KinCony 16 Channel  
-model: KC868-A16
-image: /assets/device_images/kincony_KC868-A16.webp
-template32: '{"NAME":"KC868-A16 rev 1.4","GPIO":[32,1,1,1,640,608,1,1,1,1,1,1,1,1,5600,1,0,1,1,5568,0,1,1,1,0,0,0,0,1,1,1,1,1,0,0,1],"FLAG":0,"BASE":1}' 
-link: https://www.aliexpress.com/item/1005004102599835.html
-link2: 
-mlink: https://www.kincony.com/arduino-esp32-16-channel-relay-module-2.html
-flash: serial
-category: relay
-type: Relay Board
-standard: global
+
+template32:
+
 ---
 Use the _USB-C_ port to flash the device.
 
