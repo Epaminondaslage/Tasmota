@@ -1,65 +1,50 @@
 # Tasmota firmware with KC868-A16
 
-### Usar o Instalador Tasmotaweb
+* Foram feitos todas as tentativas disponibilizadas no site de suporte da KinConi e a UI nao funcionou corretamente. O mais significativo foi o fato dos firmawares disponibilizados pelo fabricante **não** suportarem as atualizações do firmware Tasmota conforme são disponibilizadas pelo fabricante do Sw.
 
-É necessario usar o Google Chrome
-
-Acessar a URL : 
-
-https://tasmota.github.io/install/
-
-<img src="../img/tasmota_web_instaler.jpg" alt="IIC KC868-A16" style="width: 50%;">
+* Referencias não testadas no site Tasmota https://templates.blakadder.com/kincony_KC868-A16.html
 
 
-### Baixar o Firmware Tasmota de drag and drop in webpage
-
-https://drive.google.com/file/d/1PdXAKDZJ2mif8EGle3fGMhevDy6k03sR/view?usp=drive_link
-
-### Config Ethernet for KC868-A16
-
-if you want to enable **Ethernet for KC868-A16**, just click **"Configure Other"** -- paste **"Template"** as follows:
-
-``` 
-{"NAME":"KC868-A16","GPIO":[32,0,1120,0,640,608,0,0,0,1,1,1152,0,0,5600,0,0,0,0,5568,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,1],"FLAG":0,"BASE":1,"CMND":"EthClockMode 3 | EthAddress 0 | EthType 0 | I2CDriver2 1"}
-```
-
-check **"Activate"**  , then press **"Save"**. after restart, ethernet cable can be used.
-
-### Config PCF8574 for "INPUT" and "OUTPUT"
-
-you need to set "SDA" and "SCL" pin firstly. the follow is KC868-A16, you just set 
+### Config do template para ESP32:
 
 ```
-SDA:GPIO4  
-SCL: GPIO5 
+{"NAME":"KC868-A16 rev 1.4","GPIO":[32,1,1,1,640,608,1,1,1,1,1,1,1,1,5600,1,0,1,1,5568,0,1,1,1,0,0,0,0,1,1,1,1,1,0,0,1],"FLAG":0,"BASE":1}
+
+```
+---
+Use the _USB-C_ port to flash the device.
+
+### To build a binary with ethernet, all inputs and outputs support add to `user_config_override.h`:
+
+```arduino
+#ifndef USE_I2C
+#define USE_I2C                                  // I2C using library wire (+10k code, 0k2 mem, 124 iram)
+#endif
+
+  #define USE_PCF8574                            // [I2cDriver2] Enable PCF8574 I/O Expander (I2C addresses 0x20 - 0x26 and 0x39 - 0x3F) (+1k9 code)
+    #define USE_PCF8574_SENSOR                   // enable PCF8574 inputs and outputs in SENSOR message
+    #define USE_PCF8574_DISPLAYINPUT             // enable PCF8574 inputs display in Web page
+    #define USE_PCF8574_MQTTINPUT                // enable MQTT message & rule process on input change detection : stat/%topic%/PCF8574_INP = {""Time"":""2021-03-07T16:19:23+01:00"",""PCF8574-1_INP"":{""D1"":1}}
+
+#define USE_ETHERNET                             // Add support for ethernet (Currently fixed for Olimex ESP32-PoE)
+  #define ETH_TYPE          0                    // [EthType] 0 = ETH_PHY_LAN8720, 1 = ETH_PHY_TLK110, 2 = ETH_PHY_IP101
+  #define ETH_ADDR          0                    // [EthAddress] 0 = PHY0 .. 31 = PHY31
+  #define ETH_CLKMODE       3                    // [EthClockMode] 0 = ETH_CLOCK_GPIO0_IN, 1 = ETH_CLOCK_GPIO0_OUT, 2 = ETH_CLOCK_GPIO16_OUT, 3 = ETH_CLOCK_GPIO17_OUT
 ```
 
-for KC868-A16, then config PCF8574 for "INPUT" and "OUTPUT", will be ok.
+Inputs (X01 - X16) and outputs (Y01 - Y16) use [PCF8574](https://tasmota.github.io/docs/PCF8574/) over I2C. 
 
-<img src="../img/7-tasmota-config-iic.png" alt="IIC KC868-A16" style="width: 50%;">
+You need to configure them using _
 
-### KC868-A16 com Tasmota
+**Configuration - Configure PCF8574**_ and set
 
-<img src="../img/tasmota-a16.png" alt="tasmota KC868-A16" style="width: 50%;">
+- Device 1  Port 0 - Port 7 as Output
+- Device 2  Port 0 - Port 7 as Output
+- Device 3  Port 0 - Port 7 as Input
+- Device 4  Port 0 - Port 7 as Input
 
-### KC868-A16 Hardware and conections
+[KinCony forums](https://www.kincony.com/forum/forumdisplay.php?fid=6) have examples and demos of all the functions with various firmware
 
-<img src="../img/KC868-A16.jpg" alt="Placa KC868-A16" style="width: 50%;">
-<img src="../img/a16-connections.jpg" alt="Placa KC868-A16" style="width: 50%;">
-<img src="../img/a16-connections3.jpg" alt="Placa KC868-A16" style="width: 50%;">
+[Schematics](https://www.kincony.com/download/KC868-A16-schematic.pdf)
 
-### KinCony 16 Channel Relay Board (KC868-A16) TASMOTA Template
-
-https://templates.blakadder.com/kincony_KC868-A16.html
-
-### Fonte : Tasmota firmware para KC868-A16
-
-* https://www.kincony.com/forum/showthread.php?tid=1715
-  02-25-2022, 06:37 AM 
-* https://www.kincony.com/forum/showthread.php?tid=2370&page=2&highlight=KC868-A16+firmware
-  11-23-2022, 08:39 PM 
-* MQTT para KC868-A16
-  https://www.kincony.com/forum/attachment.php?aid=2872
-* KC868-A16 com sensor de temperatura
-  https://www.kincony.com/forum/showthread.php?tid=2370&page=2&highlight=KC868-A16+firmware
-
+RF Transmitter and Receiver not tested

@@ -15,13 +15,12 @@ Este tutorial busca ensinar de forma simples e direta comoe instalar e configura
 
 2. **Placa 4in/4out com Tasmota**
    - Repositório: [Tasmota - Placa 4in/4out](https://github.com/Epaminondaslage/Tasmota/tree/main/Placa_4in_4out)
-
-3. **Placa KC868-A16 com Tasmota**
-   - Repositório: [Tasmota - KC868-A16](https://github.com/Epaminondaslage/Tasmota/tree/main/KC868-A16)
      
-4. **TASMOTA para Ai-Thinker Camera (ESP32-CAM)**
+3. **TASMOTA para Ai-Thinker Camera (ESP32-CAM)**
    - Repositório: [Tasmota - ESP 32 CAM ](https://github.com/Epaminondaslage/ESP-32-CAM)
-
+     
+4. **TASMOTA para a placa KC868-A16**
+   - Repositório: [Tasmota KC868-A16 ](https://github.com/Epaminondaslage/Tasmota/blob/main/KC868-A16/README.md)
 ---
 
 ## Principais características do Tasmota

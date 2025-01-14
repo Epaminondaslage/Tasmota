@@ -1,6 +1,9 @@
 
 # Estrutura de Tópicos MQTT no Tasmota
 
+* Documentação oficial
+   - https://tasmota.github.io/docs/MQTT/
+
 A estrutura de tópicos de um dispositivo Tasmota no MQTT segue uma hierarquia bem definida, permitindo comunicação bidirecional entre o dispositivo e o servidor MQTT. Essa estrutura é flexível e configurável, mas geralmente utiliza os prefixos `cmnd`, `stat` e `tele` combinados com o tópico base do dispositivo.
 
 ## Configuração de Tópicos MQTT no Tasmota
