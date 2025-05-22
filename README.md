@@ -295,6 +295,104 @@ Similarmente, se publicamos **on** no topico **cmnd/tasmota_01/POWER**, o relé 
   - RestartReason = Exception
 
 ---
+# Ajuste de Hora no Tasmota
+
+O Tasmota utiliza o protocolo **NTP (Network Time Protocol)** para sincronizar automaticamente a data e hora com a internet. Para que a hora local exibida pelo dispositivo esteja correta, é necessário configurar:
+
+- O **fuso horário** adequado
+- Um ou mais **servidores NTP**
+- (Opcional) **Horário de verão**
+
+---
+
+## 📍 Passo a Passo para ajustar a hora
+
+### 1. Acesse o Console do Tasmota
+
+Abra o navegador e vá até o IP do dispositivo Tasmota, por exemplo:
+
+```
+http://10.0.0.57
+```
+
+Clique em **Console** no menu superior.
+
+---
+
+### 2. Defina o Fuso Horário (Exemplo: Horário de Brasília - UTC-3)
+
+Digite o seguinte comando:
+
+```
+Timezone -3
+```
+
+Ou, para ajuste automático de verão:
+
+```
+Timezone 600
+```
+
+---
+
+### 3. Ative o Horário de Verão (opcional)
+
+Este comando ativa o ajuste automático de horário de verão, baseado em regras configuradas:
+
+```
+SetOption52 1
+```
+
+---
+
+### 4. Configure os servidores NTP (opcional)
+
+Tasmota já usa `pool.ntp.org` por padrão, mas você pode especificar servidores brasileiros:
+
+```
+NtpServer1 a.ntp.br
+NtpServer2 b.ntp.br
+NtpServer3 c.ntp.br
+```
+
+---
+
+### 5. Verifique a hora atual
+
+Use o comando:
+
+```
+Time
+```
+
+A resposta será algo como:
+
+```json
+{
+  "Time": "2025-05-22T15:00:00",
+  "Epoch": 1747945200
+}
+```
+
+Confira se o horário **local** está correto.
+
+---
+
+## ✅ Exemplo completo de configuração para o Brasil
+
+No console do Tasmota, execute os comandos:
+
+```
+Timezone -3
+SetOption52 1
+NtpServer1 a.ntp.br
+NtpServer2 b.ntp.br
+NtpServer3 c.ntp.br
+Time
+```
+
+---
+
 
 # ✅ Resumo do Comandos para Melhorar Estabilidade do Tasmota
 
@@ -381,7 +479,7 @@ IPAddress4 8.8.8.8       # DNS
 
 ---
 
-## ✅ Conjunto mínimo recomendado
+###  Conjunto mínimo recomendado para o Tasmota no Brasil
 
 ```bash
 SetOption4 0
@@ -390,9 +488,13 @@ SetOption3 0
 WebLog 2
 SerialLog 0
 TelePeriod 60
+Timezone -3
+SetOption52 1
+NtpServer1 a.ntp.br
+NtpServer2 b.ntp.br
+NtpServer3 c.ntp.br
+Time
 ```
-
-Aplicar esse conjunto básico melhora significativamente a estabilidade geral da rede Tasmota.
 
 
 ---
