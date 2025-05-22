@@ -296,11 +296,8 @@ Similarmente, se publicamos **on** no topico **cmnd/tasmota_01/POWER**, o relé 
 
 ---
 
-# ✅ Comandos para Melhorar Estabilidade do Tasmota
+# ✅ Resumo do Comandos para Melhorar Estabilidade do Tasmota
 
-Este guia traz os comandos essenciais a serem aplicados no console web do Tasmota para aumentar a estabilidade, reduzir reinicializações e evitar falhas de conexão.
-
----
 
 ## 📶 Wi-Fi mais confiável
 
@@ -397,10 +394,6 @@ TelePeriod 60
 
 Aplicar esse conjunto básico melhora significativamente a estabilidade geral da rede Tasmota.
 
----
-
-**📌 Observação final:**
-Esses comandos podem ser aplicados diretamente via Console Web de cada Tasmota ou por automações via MQTT.
 
 ---
 
