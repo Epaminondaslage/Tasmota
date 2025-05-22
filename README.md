@@ -177,7 +177,132 @@ Similarmente, se publicamos **on** no topico **cmnd/tasmota_01/POWER**, o relé 
 
 ![Alt text](https://github.com/Epaminondaslage/HomeAssistant-Tasmota-MQTT/blob/main/imagens/20.png)
 
-  
+  # ✅ Guia de Melhoria de Estabilidade do Tasmota
+
+## 1. **Atualize o firmware**
+- Sempre use a **versão estável mais recente** (`tasmota.bin.gz`).
+- Evite o `tasmota-lite` em dispositivos com sensores, regras ou uso MQTT intenso.
+- Use OTA com:
+  ```
+  OtaUrl http://ota.tasmota.com/tasmota/release/tasmota.bin.gz
+  Upgrade 1
+  ```
+
+---
+
+## 2. **Desative recursos que consomem memória desnecessariamente**
+
+| Comando              | Efeito                                 |
+|----------------------|------------------------------------------|
+| `SetOption57 0`      | Desativa SensorRetain                   |
+| `SetOption4 0`       | Desativa MQTT Retain                    |
+| `WebLog 2`           | Mantém nível de log leve/moderado       |
+| `SerialLog 0`        | Desativa log serial se não usado        |
+| `SetOption3 0`       | Evita reinício ao perder MQTT           |
+| `SetOption55 0`      | Desativa envio automático de `LWT`      |
+
+---
+
+## 3. **Configure corretamente o Wi-Fi**
+
+- Use **SSID estável**, de 2.4 GHz.
+- Evite redes com nomes com espaços ou acentos.
+- Atribua **IP fixo** para reduzir tempo de reconexão:
+  ```
+  IPAddress1 10.0.0.50
+  IPAddress2 10.0.0.1
+  IPAddress3 255.255.255.0
+  IPAddress4 8.8.8.8
+  ```
+
+> ### ⚠️ E se o firmware não suportar IP fixo?
+> Alguns firmwares (como versões lite) não oferecem suporte à configuração manual de IP.
+> 
+> ✅ Alternativas:
+> 
+> - **Reserva de IP no roteador (via DHCP):**
+>   Configure o roteador para atribuir sempre o mesmo IP ao MAC do Tasmota.
+>
+> - **Acesso via hostname/mDNS:**
+>   Exemplo: `http://tasmota-bomba-aquec-piscina.local`
+>
+> - **Atualize para o firmware completo** (`tasmota.bin.gz`) para habilitar essa funcionalidade.
+
+- Dica: use roteador em **modo apenas N**, canal fixo (ex: 6 ou 11).
+
+---
+
+## 4. **Ajustes de economia de energia (Sleep)**
+- O Tasmota usa `SleepMode: Dynamic` com `Sleep: 50` por padrão (bom equilíbrio).
+- Se estiver enfrentando instabilidade em sensores ou delay em comandos, pode usar:
+  ```
+  Sleep 0
+  ```
+
+> Isso reduz latência, mas aumenta consumo de energia.
+
+---
+
+## 5. **Acompanhe o desempenho (com `Status`)**
+- Execute periodicamente:
+  ```
+  Status 0
+  Status 11
+  ```
+
+- Observe:
+  - `Heap` — deve estar **acima de 20 KB**
+  - `LoadAvg` — abaixo de **100** é ideal
+  - `RestartReason` — evite "Exception" ou "Hardware Watchdog"
+
+---
+
+## 6. **Evite uso excessivo de regras e timers**
+- Regras mal escritas ou em loop podem consumir heap e causar reinicializações.
+- Priorize automações externas (Node-RED, Home Assistant, etc.).
+
+---
+
+## 7. **Desligue sensores não usados**
+- Tasmota carrega drivers automaticamente. Se estiver usando firmware com sensores desnecessários, compile sua própria versão ou use comandos como:
+  ```
+  Module 1  // Sonoff Basic, sem sensores extras
+  ```
+
+---
+
+## 8. **Configure Telemetria corretamente**
+- Para enviar status regularmente ao broker ou monitoramento:
+  ```
+  TelePeriod 60
+  ```
+
+> Menores que isso causam mais tráfego e uso de heap.
+
+---
+
+## 9. **Use fontes de alimentação confiáveis**
+- Use **fontes estáveis de 3.3V ou 5V** com corrente mínima de 500 mA.
+- Adicione **capacitores de 100μF e 0.1μF** próximos ao chip (ESP8266/ESP8285) para evitar resets por ruído.
+
+---
+
+## 10. **Monitore remotamente**
+- Use painel web (como o que criamos) ou MQTT + Grafana/InfluxDB para alertas automáticos.
+- Crie alertas para:
+  - Heap < 20
+  - LoadAvg > 100
+  - RestartReason = Exception
+
+---
+
+## ✅ Conclusão
+
+Com essas práticas, você garante:
+- Mais tempo de uptime
+- Menor risco de travamentos ou resets inesperados
+- Reconexões Wi-Fi/MQTT mais rápidas
+- Dispositivos mais responsivos e con
 
 
 
