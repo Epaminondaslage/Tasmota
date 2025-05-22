@@ -296,13 +296,116 @@ Similarmente, se publicamos **on** no topico **cmnd/tasmota_01/POWER**, o relé 
 
 ---
 
-## ✅ Conclusão
+# ✅ Comandos para Melhorar Estabilidade do Tasmota
 
-Com essas práticas, você garante:
-- Mais tempo de uptime
-- Menor risco de travamentos ou resets inesperados
-- Reconexões Wi-Fi/MQTT mais rápidas
-- Dispositivos mais responsivos e con
+Este guia traz os comandos essenciais a serem aplicados no console web do Tasmota para aumentar a estabilidade, reduzir reinicializações e evitar falhas de conexão.
+
+---
+
+## 📶 Wi-Fi mais confiável
+
+```bash
+SetOption56 0
+```
+
+**Descrição:** Reativa reconexão automática ao Wi-Fi.
+
+---
+
+## 🧠 Reduzir uso de memória (heap)
+
+```bash
+WebLog 2
+SerialLog 0
+MqttLog 0
+```
+
+**Descrição:**
+
+* `WebLog 2`: mantém logs úteis sem sobrecarregar
+* `SerialLog 0`: libera memória (se você não usa porta serial)
+* `MqttLog 0`: reduz tráfego e uso de heap
+
+---
+
+## 🚫 Desativar mensagens MQTT retidas (retain)
+
+```bash
+SetOption4 0
+SetOption57 0
+PowerRetain 0
+SensorRetain 0
+```
+
+**Descrição:** Evita retenção de mensagens antigas que podem ativar dispositivos por engano após uma reinicialização ou reconexão MQTT.
+
+---
+
+## ⚡ Evitar reinícios automáticos
+
+```bash
+SetOption3 0
+```
+
+**Descrição:** Impede que o dispositivo reinicie automaticamente ao perder conexão com o broker MQTT.
+
+---
+
+## 🧪 Telemetria regular e confiável
+
+```bash
+TelePeriod 60
+```
+
+**Descrição:** Envia status completo a cada 60 segundos, ideal para dashboards e monitoramento.
+
+---
+
+## 🔧 Sleep e performance
+
+```bash
+Sleep 50
+```
+
+**Descrição:** Valor padrão recomendado. Para respostas mais rápidas, use `Sleep 0` (aumenta consumo de energia).
+
+---
+
+## (Opcional) IP fixo no dispositivo (se suportado)
+
+```bash
+IPAddress1 10.0.0.48     # IP do Tasmota
+IPAddress2 10.0.0.1      # Gateway
+IPAddress3 255.255.255.0 # Máscara
+IPAddress4 8.8.8.8       # DNS
+```
+
+**Alternativa:** Configure IP fixo via DHCP reservado no roteador.
+
+---
+
+## ✅ Conjunto mínimo recomendado
+
+```bash
+SetOption4 0
+SetOption57 0
+SetOption3 0
+WebLog 2
+SerialLog 0
+TelePeriod 60
+```
+
+Aplicar esse conjunto básico melhora significativamente a estabilidade geral da rede Tasmota.
+
+---
+
+**📌 Observação final:**
+Esses comandos podem ser aplicados diretamente via Console Web de cada Tasmota ou por automações via MQTT.
+
+---
+
+**Autor:** Gerado com ajuda do ChatGPT · [OpenAI](https://openai.com)
+
 
 
 
